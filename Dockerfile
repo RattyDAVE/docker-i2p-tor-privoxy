@@ -2,7 +2,8 @@ FROM alpine:latest
 
 RUN apk add --update --no-cache \
     privoxy i2pd tor \
-    ca-certificates
+    ca-certificates && \
+    rm /etc/privoxy/*.new
 
 COPY --chown=privoxy:privoxy ./privoxy/privoxy.conf /etc/privoxy/config
 COPY --chown=privoxy:privoxy ./privoxy/action.conf /etc/privoxy/default.action
@@ -12,6 +13,6 @@ COPY --chown=tor:tor ./torrc.conf /etc/tor/torrc
 COPY --chmod=755 ./entrypoint.sh /entrypoint.sh
 
 # Remove sample config files
-RUN rm /etc/privoxy/*.new
+#RUN rm /etc/privoxy/*.new
 
 ENTRYPOINT [ "/bin/sh", "/entrypoint.sh" ]
