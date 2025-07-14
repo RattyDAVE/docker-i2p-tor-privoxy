@@ -5,12 +5,14 @@ RUN apk add --update --no-cache \
     ca-certificates && \
     rm /etc/privoxy/*.new
 
-COPY --chown=privoxy:privoxy ./privoxy/privoxy.conf /etc/privoxy/config
-COPY --chown=privoxy:privoxy ./privoxy/action.conf /etc/privoxy/default.action
-COPY --chown=privoxy:privoxy ./privoxy/filters.conf /etc/privoxy/default.filter
-COPY --chown=i2pd:i2pd ./i2pd.conf /etc/i2pd/i2pd.conf
-COPY --chown=tor:tor ./torrc.conf /etc/tor/torrc
+#COPY --chown=privoxy:privoxy ./privoxy/privoxy.conf /etc/privoxy/config
+#COPY --chown=privoxy:privoxy ./privoxy/action.conf /etc/privoxy/default.action
+#COPY --chown=privoxy:privoxy ./privoxy/filters.conf /etc/privoxy/default.filter
+#COPY --chown=i2pd:i2pd ./i2pd.conf /etc/i2pd/i2pd.conf
+#COPY --chown=tor:tor ./torrc.conf /etc/tor/torrc
 COPY --chmod=755 ./entrypoint.sh /entrypoint.sh
+
+COPY /etc/ /etc/
 
 # Remove sample config files
 #RUN rm /etc/privoxy/*.new
