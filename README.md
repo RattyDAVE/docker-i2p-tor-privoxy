@@ -12,7 +12,7 @@ This repository contains a docker image that creates a proxy based on [Privoxy](
 Run the following command, replace PORT with your desired port number and ARCH with your architecture (`amd64` or `arm64` or `386`).
 
 ```bash
-sudo docker run -d -p PORT:8118 --restart=unless-stopped --name=hsproxy ghcr.io/c10udburst/hsproxy:ARCH
+docker run -d -p 8118:8118 --restart=unless-stopped --name=docker-i2p-tor-privoxy rattydave/i2p-tor-privoxy
 ```
 
 ## Usage
