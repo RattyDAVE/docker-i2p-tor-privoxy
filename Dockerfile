@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 RUN apk add --update --no-cache \
-    curl privoxy i2pd tor \
+    curl supervisord privoxy i2pd tor \
     ca-certificates && \
     rm /etc/privoxy/*.new
 
