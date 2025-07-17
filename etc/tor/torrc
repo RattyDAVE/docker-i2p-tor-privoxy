@@ -44,7 +44,7 @@ SocksPort 9050
 ## Use the system log instead of Tor's logfiles
 #Log notice syslog
 ## To send all messages to stderr:
-Log debug stderr
+#Log debug stderr
 
 ## The directory for keeping all the keys/etc. By default, we store
 ## things in $HOME/.tor on Unix, and in Application Data\tor on Windows.
